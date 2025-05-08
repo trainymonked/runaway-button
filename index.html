@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Runaway Button</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🟩</text></svg>">
+  <style>
+    * {
+      user-select: none;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #1a1a1a;
+      font-family: sans-serif;
+      color: white;
+    }
+
+    #btn {
+      padding: 12px 24px;
+      font-size: 18px;
+      position: absolute;
+      cursor: pointer;
+      background: #4caf50;
+      border: none;
+      border-radius: 8px;
+      transition: top 0.2s, left 0.2s;
+    }
+
+    #message {
+      font-size: 24px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn" tabindex="-1">Catch me</button>
+  <div id="message">🎉 You got me! 🎉</div>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const msg = document.getElementById('message');
+
+    btn.addEventListener('mouseover', () => {
+      setTimeout(() => {
+        const maxX = window.innerWidth - btn.offsetWidth;
+        const maxY = window.innerHeight - btn.offsetHeight;
+        const randX = Math.floor(Math.random() * maxX);
+        const randY = Math.floor(Math.random() * maxY);
+
+        btn.style.left = randX + 'px';
+        btn.style.top = randY + 'px';
+      }, 75);
+    });
+
+    btn.addEventListener('click', () => {
+      btn.style.display = 'none';
+      msg.style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>
