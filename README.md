@@ -1,7 +1,9 @@
-# runaway-button
+# Runaway Button
 
 A fun little game where a button tries to escape your mouse.  
 Catch it if you can! 🟩
+
+🔗 [Live Demo](https://trainymonked.github.io/runaway-button)
 
 ## How it works
 
@@ -16,12 +18,3 @@ Catch it if you can! 🟩
    git clone https://github.com/trainymonked/runaway-button.git
    ```
 2. Open `index.html` in your browser.
-
-## Files
-
-- `index.html` — core HTML and JavaScript logic
-- `style` and `script` are inline for simplicity
-
-## Why?
-
-Because coding should sometimes be _just fun_.
